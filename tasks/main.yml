@@ -1,7 +1,2 @@
-- name: SYSTEM APT Add backports repo
-  apt_repository: repo='deb http://ftp.debian.org/debian jessie-backports main' state=present
-
 - name: SYSTEM REDIS Redis must be installed
-  apt: pkg={{ item }} state=present default_release=jessie-backports update_cache=yes
-  with_items:
-  - redis-server
+  apt: pkg=redis-server state=present update_cache=yes
